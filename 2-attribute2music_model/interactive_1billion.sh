@@ -58,4 +58,6 @@ python -u interactive_dict_v5_1billion.py \
 --temperature ${temp} \
 --no-repeat-ngram-size ${ngram} \
 --buffer-size ${BATCH_SIZE} \
---batch-size ${BATCH_SIZE}   #> ${log_root}/${command_name}-s${start}-e${end}.log 2>&1
+--batch-size ${BATCH_SIZE} \
+--command-embed-dim 128 \
+--model-overrides '{"command_embed_dim": 128}'   #> ${log_root}/${command_name}-s${start}-e${end}.log 2>&1
