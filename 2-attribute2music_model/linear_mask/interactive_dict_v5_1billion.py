@@ -414,6 +414,7 @@ def cli_main():
     parser.add_argument("--start", type = int, default=None)
     parser.add_argument("--end", type = int, default=None)
     parser.add_argument("--use_gold_labels", type = int, default=0)
+    parser.add_argument("--command-embed-dim", type=int, default=128)
     args = options.parse_args_and_arch(parser)
     attributes(args)
 
