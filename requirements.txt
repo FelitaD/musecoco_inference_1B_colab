@@ -9,7 +9,7 @@ scikit-learn
 wandb
 
 # Attribute-to-Music Generation
-fairseq==0.10.2
+# fairseq==0.10.2
 miditoolkit
 matplotlib
 pytorch-fast-transformers
