@@ -25,7 +25,7 @@ model_name="linear_mask-${model_size}"
 
 # models parameters
 DATA_DIR="${CONTENT_ROOT}/data/$datasets_name"
-checkpoint_path="${CONTENT_ROOT}/checkpoints/${model_name}/${checkpoint_name}.pt"
+checkpoint_path="/root/.cache/huggingface/hub/models--XinXuNLPer--MuseCoco_attribute2music/snapshots/8d9df584e3e09da88601546e7980323221f12644/checkpoint_2_280000.pt"
 ctrl_command_path="${CONTENT_ROOT}/data/infer_input/${command_name}.bin"
 save_root="${CONTENT_ROOT}/generation/${date}/${model_name}-${checkpoint_name}/${command_name}/topk${k}-t${temp}-ngram${ngram}"
 log_root="${CONTENT_ROOT}/log/${date}/${model_name}"
