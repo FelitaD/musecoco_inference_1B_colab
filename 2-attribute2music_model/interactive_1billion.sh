@@ -15,7 +15,7 @@ checkpoint_name="checkpoint_2_280000"
 BATCH_SIZE=1
 
 # Remove the backslash - use proper quoting instead
-CONTENT_ROOT="/content/drive/Othercomputers/My Mac/google_colab/musecoco/2-attribute2music_model"
+CONTENT_ROOT="/content/musecoco_inference_1B_colab/2-attribute2music_model"
 
 # models parameters
 device=0
