@@ -143,6 +143,10 @@ def large_linear_transformer_lm_architecture(args):
 
 @register_model_architecture("linear_transformer_lm", "linear_transformer_lm_1billion")
 def Billion_linear_transformer_lm_architecture(args):
+    try:
+        _ = args.command_embed_dim
+    except (AttributeError, KeyError):
+        args.command_embed_dim = 128
     if args.command_embed_dim is None:
         args.command_embed_dim = 128
     args.decoder_embed_dim = getattr(args, "decoder_embed_dim", 2048)
