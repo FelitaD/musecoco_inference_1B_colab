@@ -12,7 +12,7 @@ ngram=0
 
 datasets_name="truncated_2560"
 checkpoint_name="checkpoint_2_280000"
-BATCH_SIZE=2
+BATCH_SIZE=1
 
 # Remove the backslash - use proper quoting instead
 CONTENT_ROOT="/content/drive/Othercomputers/My Mac/google_colab/musecoco/2-attribute2music_model"
