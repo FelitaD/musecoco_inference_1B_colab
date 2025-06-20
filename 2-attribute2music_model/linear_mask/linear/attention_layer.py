@@ -51,7 +51,7 @@ class AttentionLayer(Module):
         self.k_proj = Linear(d_model, d_keys * n_heads)
         self.v_proj = Linear(d_model, d_values * n_heads)
         self.out_proj = Linear(d_values * n_heads, d_model)
-        self.n_heads = n_heads
+        self.num_heads = n_heads
 
         self.qkv_same_dim = d_keys == d_values == d_model // n_heads
 
@@ -103,7 +103,7 @@ class AttentionLayer(Module):
         # Extract the dimensions into local variables
         N, L, _ = queries.shape
         _, S, _ = keys.shape
-        H = self.n_heads
+        H = self.num_heads
 
         # Project the queries/keys/values
         queries = self.q_proj(queries).view(N, L, H, -1)
