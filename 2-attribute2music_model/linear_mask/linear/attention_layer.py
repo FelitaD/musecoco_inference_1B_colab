@@ -52,6 +52,7 @@ class AttentionLayer(Module):
         self.v_proj = Linear(d_model, d_values * n_heads)
         self.out_proj = Linear(d_values * n_heads, d_model)
         self.num_heads = n_heads
+        self.head_dim = d_model // n_heads
 
         self.qkv_same_dim = d_keys == d_values == d_model // n_heads
 
