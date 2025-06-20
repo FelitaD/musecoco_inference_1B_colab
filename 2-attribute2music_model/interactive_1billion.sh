@@ -42,9 +42,9 @@ mkdir -p "${save_root}"
 mkdir -p "${log_root}"
 
 python -u interactive_dict_v5_1billion.py \
-"${DATA_DIR}/data-bin" \
-"$checkpoint_path" \
+${DATA_DIR}/data-bin \
 --task language_modeling_control \
+--path $checkpoint_path \
 --ctrl_command_path "$ctrl_command_path" \
 --save_root "$save_root" \
 --need_num ${need_num} \
