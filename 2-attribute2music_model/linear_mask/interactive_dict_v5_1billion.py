@@ -208,6 +208,11 @@ def attributes(args):
             model.half()
         if use_cuda and not args.pipeline_model_parallel:
             model.cuda()
+        if not hasattr(args, "generation"):
+            class Dummy:
+                pass
+            args.generation = Dummy()
+            args.generation.no_beamable_mm = getattr(args, "no_beamable_mm", False)
         model.prepare_for_inference_(args)
         model.decoder.args.is_inference = True
 
