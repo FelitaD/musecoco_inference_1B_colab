@@ -30,6 +30,7 @@ from fairseq_cli import interactive
 from data_process.util import key_order, key_has_NA
 import A2M_task_new
 from linear import transformer_lm
+from omegaconf import OmegaConf
 
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
@@ -213,7 +214,7 @@ def attributes(args):
                 pass
             args.generation = Dummy()
             args.generation.no_beamable_mm = getattr(args, "no_beamable_mm", False)
-        model.prepare_for_inference_(args)
+        OmegaConf.set_struct(model.decoder.args, False)
         model.decoder.args.is_inference = True
 
     # Set dictionaries
